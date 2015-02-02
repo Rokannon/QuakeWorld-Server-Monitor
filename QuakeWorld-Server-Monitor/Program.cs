@@ -6,17 +6,26 @@ using System.Windows.Forms;
 
 namespace QuakeWorld_Server_Monitor
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            AppModel model = new AppModel();
+            model.LoadSettings();
+            AppContext context = new AppContext();
+            AppController controller = new AppController();
+
+            controller.Connect(context, model);
+            context.Connect(model, controller);
+            controller.OpenSettings();
+            Application.Run(context);
         }
     }
 }
