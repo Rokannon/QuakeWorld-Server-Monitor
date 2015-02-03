@@ -60,7 +60,7 @@ namespace QuakeWorld_Server_Monitor
 
         public XElement QueryServer()
         {
-            model.swapResponses();
+            model.SwapResponses();
             model.currQueryResponse.Clear();
             Process qstatProcess = new Process();
             qstatProcess.StartInfo.FileName = "qstat.exe";

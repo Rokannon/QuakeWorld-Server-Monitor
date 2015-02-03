@@ -30,7 +30,7 @@ namespace QuakeWorld_Server_Monitor
             Properties.Settings.Default.Save();
         }
 
-        public void swapResponses()
+        public void SwapResponses()
         {
             ServerQueryResponse temp;
             temp = currQueryResponse;

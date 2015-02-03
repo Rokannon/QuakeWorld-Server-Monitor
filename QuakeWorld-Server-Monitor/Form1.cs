@@ -19,7 +19,7 @@ namespace QuakeWorld_Server_Monitor
         {
             InitializeComponent();
             Icon = Properties.Resources.Quake_icon;
-            Activated += Form1_Activated;
+            Shown += Form1_Shown;
         }
 
         public void Connect(AppModel model, AppController controller)
@@ -28,7 +28,7 @@ namespace QuakeWorld_Server_Monitor
             this.controller = controller;
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
             textBox1.Text = model.serverHostname.ToString();
             textBox2.Text = model.serverPort.ToString();
