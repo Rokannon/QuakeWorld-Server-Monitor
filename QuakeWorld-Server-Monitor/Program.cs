@@ -16,15 +16,13 @@ namespace QuakeWorld_Server_Monitor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             AppModel model = new AppModel();
             model.LoadSettings();
             AppContext context = new AppContext();
             AppController controller = new AppController();
-
             controller.Connect(context, model);
             context.Connect(model, controller);
-            controller.OpenSettings();
+            controller.StartApp();
             Application.Run(context);
         }
     }

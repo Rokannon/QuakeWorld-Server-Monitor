@@ -46,5 +46,17 @@ namespace QuakeWorld_Server_Monitor.Properties {
                 this["serverPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool enableNotifications {
+            get {
+                return ((bool)(this["enableNotifications"]));
+            }
+            set {
+                this["enableNotifications"] = value;
+            }
+        }
     }
 }
