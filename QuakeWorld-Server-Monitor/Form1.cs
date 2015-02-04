@@ -46,8 +46,11 @@ namespace QuakeWorld_Server_Monitor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            model.serverHostname = textBox1.Text;
+            model.serverPort = int.Parse(textBox2.Text);
             controller.QueryServer();
             MessageBox.Show(controller.GetServerStatusText(), "Server Status");
+            model.LoadSettings(); // Restores model.
         }
     }
 }

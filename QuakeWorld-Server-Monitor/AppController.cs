@@ -53,6 +53,7 @@ namespace QuakeWorld_Server_Monitor
             model.settingsOpened = true;
             timer.Enabled = false;
             context.GetForm().ShowDialog();
+            model.prevQueryResponse.Clear();
             model.currQueryResponse.Clear();
             UpdateNotificationsState();
             model.settingsOpened = false;
